@@ -12,7 +12,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Configuration
 public class WebClientconfig {
     @Bean // inject inside another class to call StudentMS
-    @LoadBalanced // load balance the request
+    @LoadBalanced // load balance the request helps the service to query Eureka for instances and perform client-side load balancing.
 public WebClient.Builder builder() {
         return WebClient.builder().baseUrl("http://StudentMS"); // base url of userms to call StudentMS
     }
